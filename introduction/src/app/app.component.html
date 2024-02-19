@@ -1,0 +1,27 @@
+{{ title }}
+<app-super-components />
+
+<p>
+    Wowowowowowowo :o
+</p>
+
+<app-zippy titleZippy="Une nouvelle valeur">
+    <section>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Error odit omnis ducimus libero dolor? Fuga aperiam itaque adipisci. Molestiae repudiandae non praesentium nobis alias dicta. Ea facere qui delectus voluptates.
+    </section>
+    <ng-container class="footer">
+        Footer
+    </ng-container>
+</app-zippy>
+<app-zippy [titleZippy]="title" [isHidden]="true">
+
+</app-zippy>
+<app-banana-in-a-box></app-banana-in-a-box>
+<p>
+    Truc Alert
+</p>
+<app-truc (trucEmitter)="alertTruc($event)"></app-truc>
+<p>
+    Truc Console
+</p>
+<app-truc (trucEmitter)="consoleTruc($event)"></app-truc>

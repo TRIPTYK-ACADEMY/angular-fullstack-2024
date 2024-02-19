@@ -1,0 +1,12 @@
+<section>
+    <div>
+        <span> {{ titleZippy }} </span>
+        <button (click)="toggleContentVisibility()"> {{ buttonText }}</button>
+    </div>
+    <p [hidden]="isHidden">
+        <ng-content></ng-content>
+    </p>
+    <footer>
+        <ng-content select=".footer"></ng-content>
+    </footer>
+</section>

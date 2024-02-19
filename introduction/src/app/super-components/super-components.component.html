@@ -1,0 +1,26 @@
+<p>
+    {{ name }} works!
+</p>
+<!-- property bindings -->
+<p [hidden]="isHidden">
+    Ze suis caché !
+</p>
+
+<!-- class bindings -->
+<!-- toggle la présence de la classe "banane" sur
+notre bouton selon la propriété isDisabled -->
+<button type="submit" [class.banane]="isDisabled" class=""  [disabled]="isDisabled">
+    Bouton
+</button>
+
+<!-- event binding -->
+<button type="button"
+ [class.purple]="isPurple" 
+ [class.chartreuse]="!isPurple"
+ (click)="toggleIsPurple()"
+>
+    Changez ma couleur
+</button>
+
+
+
