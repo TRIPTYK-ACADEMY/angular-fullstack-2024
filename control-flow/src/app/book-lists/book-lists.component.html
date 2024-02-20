@@ -1,0 +1,36 @@
+<section>
+    <nav>
+        <button (click)="viewMode = 'list'">
+            Liste de livres
+        </button>
+        <button (click)="switchToRandomView()">
+            Livre aléatoire
+        </button>
+    </nav>
+    <div>
+        @switch(viewMode) {
+            @case('list') {
+                <span>Liste</span>
+                @for (book of books; track book.titre) {
+                  <app-book [book]="book">
+                    <span class="delete" (click)="deleteBook($index)"> X </span>
+                  </app-book>
+                } @empty {
+                  <p>
+                    La liste de livre est vide :c
+                  </p>  
+                }
+            }
+            @case('random') {
+                <span>Random</span>
+                @if (randomlyChosenBook) {
+                    <app-book [book]="randomlyChosenBook" />
+                } @else {
+                    <p>
+                        On ne peut pas choisir alétoirement dans une liste vide
+                    </p>
+                }
+            }
+        }
+    </div>
+</section>

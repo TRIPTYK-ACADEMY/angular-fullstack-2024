@@ -1,0 +1,83 @@
+@for (movie of movies; track movie.title) {
+  <div 
+  [class.odd]="$odd" 
+  [class.even]="$even"
+  [class.firstElement]="$first"
+  [class.lastElement]="$last"
+  >
+    <p>
+      <span>
+        {{$index + 1}}/{{$count}} {{movie.title}} 
+      </span>
+      <span>
+        {{movie.releaseYear}}
+      </span>
+    </p>
+    <p>
+      {{movie.genre}}
+    </p>
+  </div>
+}
+
+@for(otter of evilOtters; track otter) {
+  <p>
+    hahahahahahahaha
+  </p>
+} @empty {
+  <p>
+    Il n'y a évidemment aucune loutres diaboliques :)
+  </p>
+}
+
+@if (4 > 2) {
+  <p>
+    4 est plus grand que 2
+  </p>
+}
+
+@if (false) {
+  <p>
+   Je n'apparaitrais jamais
+  </p> 
+} @else {
+  <p>
+    Comme la condition est fausse, j'apparais !
+  </p>
+}
+
+@if (false) {
+  <span>
+    hahahahaha
+  </span> 
+} @else if ("banane" === "banane") {
+  <p>
+    La banane est un fruit !
+  </p>
+} @else {
+  <p>
+    No man's land
+  </p>
+}
+
+
+<button type="button" (click)="viewMode = 'kanban'">
+  Vue Kanban
+</button>
+<button type="button" (click)="viewMode = 'list'">
+  Vue Liste 
+</button>
+
+@switch (viewMode) {
+  @case("kanban") {
+    <p> Une jolie vue avec des cartes </p> 
+  }
+  @case('list') {
+    <p> Une vue compacte qui se lit de haut en bas </p>
+  }
+  @default {
+    <p> La vue par défaut :) </p>
+  }
+}
+
+
+<app-book-lists />

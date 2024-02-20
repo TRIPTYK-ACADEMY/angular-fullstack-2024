@@ -1,0 +1,17 @@
+.odd {
+    background-color: aquamarine;
+    color: teal;
+}
+
+.even {
+    background-color: purple;
+    color: fuchsia;
+}
+
+.firstElement {
+    border: solid 5px gold;
+}
+
+.lastElement {
+    border: solid 5px olivedrab;
+}

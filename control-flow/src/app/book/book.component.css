@@ -1,0 +1,12 @@
+article {
+    border: solid 3px grey;
+    box-shadow: 1px 3px 1px 1px;
+    margin-top: 2em;
+    padding: 1em;
+    width: 30%;
+}
+
+article div {
+    display: flex;
+    justify-content: space-between;
+}

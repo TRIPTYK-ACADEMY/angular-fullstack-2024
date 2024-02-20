@@ -1,0 +1,13 @@
+<article>
+    <div>
+        <p>
+            {{book.titre}}, {{book.auteur}} 
+        </p>
+        <p>
+            <ng-content></ng-content>
+        </p>
+    </div>
+    <div>
+        genre: {{book.genre}}, langue: {{book.langue}}, publié en: {{ book.annee_publication}}
+    </div>
+</article>

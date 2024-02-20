@@ -25,3 +25,12 @@
     Truc Console
 </p>
 <app-truc (trucEmitter)="consoleTruc($event)"></app-truc>
+<p>
+    {{ favoriteClickCount }} click sur les composants favoris
+</p>
+<p>
+    {{ becameFavoriteCount }} passage à l'état favori
+</p>
+<app-is-favorite (isFavoriteToggle)="incrementFavoriteCount($event)"></app-is-favorite>
+<app-is-favorite (isFavoriteToggle)="incrementFavoriteCount($event)" [isFavorite]="true" ></app-is-favorite>
+<app-is-favorite (isFavoriteToggle)="incrementFavoriteCount($event)" ></app-is-favorite>
