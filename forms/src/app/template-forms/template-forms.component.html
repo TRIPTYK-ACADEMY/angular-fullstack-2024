@@ -1,0 +1,41 @@
+<!-- nous avons créée une variable de templace form 
+grâce à la syntaxe #nom. Par défaut, si on ne donne pas
+valeur à une variable de template, elle correspond à
+L'élément html sur lequel elle se trouve. Dans ce cas-ci
+, on demande à ce que notre variable form corresponde au
+ngForm qui représente notre formulaire. -->
+<form #form="ngForm" (ngSubmit)="submit(form)">
+    <div>
+        <label for="surname">Surnom</label>
+        <input required minlength="3" #surname="ngModel" ngModel type="text" name="surname" id="surname">
+    </div>
+    @if (surname.touched && surname.invalid) {
+        <ul class="errors">
+            @if (surname.errors?.['required']) {
+                <li>
+                    C'est un champ obligatoire
+                </li> 
+            }
+            @if (surname.errors?.['minlength']) {
+                <li>
+                   Il vous manque {{surname.errors?.['minlength'].requiredLength - surname.errors?.['minlength'].actualLength}}
+                   charaLe pour atteindre la longueur minimal :/
+                </li> 
+            }
+        </ul>
+    }
+    <div>
+        <label for="email">Email</label>
+        <input pattern="^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$" #email="ngModel" ngModel type="text" name="email" id="email">
+    </div>
+    @if(email.invalid) {
+        <div class="errors">
+            Erreur dans l'email
+        </div>
+    }
+    <div>
+        <label for="comment">Commentaire</label>
+        <textarea  ngModel name="comment" id="comment"></textarea>
+    </div>
+    <button [disabled]="form.untouched" type="submit">Envoyer</button>
+</form>

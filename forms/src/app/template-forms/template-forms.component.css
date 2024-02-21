@@ -1,0 +1,8 @@
+.errors {
+    border: solid 2px red;
+    border-radius: 15px;
+    background-color: pink;
+    color: red;
+    width: fit-content;
+    padding: 0.5em;
+}
