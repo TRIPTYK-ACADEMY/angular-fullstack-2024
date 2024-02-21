@@ -5,11 +5,12 @@ import { HighlightDirective } from './highlight.directive';
 import { ColorDirective } from './color.directive';
 import { CoffeeDirective } from './coffee.directive';
 import { LoutrePipe } from './loutre.pipe';
+import { SummaryPipe } from './summary.pipe';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, CommonModule, HighlightDirective, ColorDirective, CoffeeDirective, LoutrePipe],
+  imports: [RouterOutlet, CommonModule, HighlightDirective, ColorDirective, CoffeeDirective, LoutrePipe, SummaryPipe],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
