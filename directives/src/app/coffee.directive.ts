@@ -34,7 +34,7 @@ export class CoffeeDirective implements OnInit {
     if (this.isCoffeeVisible) {
       this.elementRef.nativeElement.innerHTML = this.coffeeAscii;
     } else {
-      this.elementRef.nativeElement.innerHTML = this.originalContent;
+      this.elementRef.nativeElement.innerHTML;
     } 
   }
 }
