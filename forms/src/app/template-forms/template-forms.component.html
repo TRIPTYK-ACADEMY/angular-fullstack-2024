@@ -6,7 +6,7 @@ L'élément html sur lequel elle se trouve. Dans ce cas-ci
 ngForm qui représente notre formulaire. -->
 <form #form="ngForm" (ngSubmit)="submit(form)">
     <div>
-        <label for="surname">Surnom</label>
+        <label #banane for="surname">Surnom</label>
         <input required minlength="3" #surname="ngModel" ngModel type="text" name="surname" id="surname">
     </div>
     @if (surname.touched && surname.invalid) {
@@ -26,7 +26,7 @@ ngForm qui représente notre formulaire. -->
     }
     <div>
         <label for="email">Email</label>
-        <input pattern="^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$" #email="ngModel" ngModel type="text" name="email" id="email">
+        <input pattern="^[\w\-\.]+@([\w\-]+\.)+[\w]{2,4}$" #email="ngModel" ngModel type="text" name="email" id="email">
     </div>
     @if(email.invalid) {
         <div class="errors">
