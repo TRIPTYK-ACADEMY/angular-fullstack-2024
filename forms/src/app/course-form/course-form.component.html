@@ -1,0 +1,35 @@
+<hr>
+<h2>
+    Création de cours
+</h2>
+<form #form="ngForm">
+    <div>
+        <label for="name">Intitulé</label>
+        <input #name="ngModel" required maxlength="64" type="text" ngModel name="name" id="name">
+    </div>
+    @if (name.invalid) {
+        @if (name.errors?.['required']) {
+            <div class="errors">
+                L'intitulé est obligatoire.
+            </div>
+        }
+    }
+    <div>
+        <label for="description">Description</label>
+        <textarea #description="ngModel" minlength="15" ngModel name="description" id="description">
+        </textarea>
+    </div>
+    @if (description.invalid) {
+        @if (description.errors?.['minlength']) {
+            <div class="errors">
+                Il vous manque
+                {{ 
+                    description.errors?.['minlength'].requiredLength - 
+                    description.errors?.['minlength'].actualLength 
+                }} charactères pour atteindre le minimum
+            </div>
+        }
+    }
+    <button [disabled]="form.invalid" type="submit">Valider</button>
+</form>
+

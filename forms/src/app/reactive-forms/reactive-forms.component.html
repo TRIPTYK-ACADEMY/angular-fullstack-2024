@@ -1,1 +1,48 @@
-<p>reactive-forms works!</p>
+<form [formGroup]="signupForm" (ngSubmit)="submit()">
+    <div>
+        <label for="email">
+            Mail
+        </label>
+        <!-- Dans les reactives forms, la propriété name 
+        est remplacé par formControlName. C'est elle qui 
+        fais le lien avec le nom de la propriété dans le
+        constructeur du formGroup signupForm -->
+        <input type="text" formControlName="email" id="email">
+    </div>
+    @if (EmailControl.pending) {
+        <div>
+            Loading...
+        </div>
+    }
+    @if (EmailControl.invalid) {
+        <div class="errors">
+            @if (EmailControl.errors?.['forbiddenExtension']) {
+                Les emails avec l'extension {{ EmailControl.errors?.['forbiddenExtension'].actualExtension }}
+                ne sont pas autorisés à s'inscrire sur cette application
+            }
+            @if (EmailControl.errors?.['uniqueEmail']) {
+                Votre adresse mail n'est pas unique.
+            }
+        </div>
+    }
+    <div formGroupName="password">
+        <div>
+            <label for="password">
+                Mot de passe
+            </label>
+            <input type="text" formControlName="field" id="password">
+        </div>
+        <div>
+            <label for="confirm">
+                Confirmation de mot de passe
+            </label>
+            <input type="text" formControlName="confirm" id="confirm">
+        </div>
+        @if (passwordControl.invalid) {
+            <div class="errors">
+                Le mot de passe et sa confirmation doivent correspondre
+            </div>
+        }
+    </div>
+    <button [disabled]="signupForm.invalid" type="submit">Submit</button>
+</form>
