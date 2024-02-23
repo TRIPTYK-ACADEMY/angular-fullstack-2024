@@ -1,0 +1,47 @@
+<h2>
+    Formulaire réactif: exercice signup form
+</h2>
+<!-- on lit l'attribut formGroup à la propriété signupForm dans le ts -->
+<form [formGroup]="signupForm">
+    <div>
+        <label for="pseudo">Pseudo</label>
+        <!-- La propriété formControlName correspond au nom du champ dans le constructeur du formGroup -->
+        <input type="text" formControlName="pseudo" id="pseudo">
+    </div>
+    @if (pseudoControl.pending) {
+        <div>
+            <p>
+                Les validateurs asynchrone sont entrain de tourner
+            </p>
+        </div>
+    }
+    @if (pseudoControl.invalid) {
+        <div class="errors">
+            @if (pseudoControl.errors?.["required"]) {
+                <p>
+                    Le pseudo est obligatoire.
+                </p>
+            }
+            @if (pseudoControl.errors?.['minlength']) {
+                <p>
+                    Le pseudo doit faire 5 charactères au mimimum
+                </p>
+            }
+            @if (pseudoControl.errors?.['containBanWord']) {
+                <p>
+                    Votre pseudo contient un mot interdit 😱
+                </p>
+            }
+        </div>
+    }
+    <div>
+        <label for="password">Mot de passe</label>
+        <input type="text" formControlName="password" id="password">
+    </div>
+    @if (signupForm.errors?.['containPseudo']) {
+        <div class="errors" >
+            Le mot de passe ne peut pas contenir le pseudo
+        </div>
+    }
+    <button [disabled]="signupForm.invalid" type="submit">Envoyer</button>
+</form>
