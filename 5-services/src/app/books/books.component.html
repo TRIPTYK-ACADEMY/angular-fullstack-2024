@@ -1,0 +1,24 @@
+<ul>
+    @for (book of books; track book.id) {
+        <li>
+            <div [ngStyle]="{
+                color: book.is_read ? 'purple' : 'black',
+            }">
+                <p>
+                {{book.title}}, {{book.author}}, {{book.publication_year}} 
+                </p>
+                <p>
+                {{book.genre}} 
+                </p>
+            </div>
+            <div>
+                <button type="button" (click)="markAsRead(book)">
+                    Marquer le livre comme lu
+                </button>
+                <button type="button" (click)="deleteBook(book)">
+                    Supprimer le livre :c
+                </button>
+            </div>
+        </li>
+    }
+</ul>
