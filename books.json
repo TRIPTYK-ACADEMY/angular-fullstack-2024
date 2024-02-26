@@ -1,20 +1,6 @@
 {
   "books": [
     {
-      "id": "1",
-      "title": "Alice in Wonderland",
-      "author": "Lewis Carroll",
-      "publication_year": 1865,
-      "genre": "Fantasy",
-      "main_characters": [
-        "Alice",
-        "The Mad Hatter",
-        "Cheshire Cat"
-      ],
-      "summary": "Alice in Wonderland is a fantasy novel written by Lewis Carroll. The story follows the adventures of Alice, a young girl who falls down a rabbit hole and finds herself in a strange and wonderful world. She encounters eccentric characters such as the Mad Hatter and the Cheshire Cat, and must navigate through absurd trials to find her way. The book has become a classic of children's literature and has captivated readers of all ages since its publication.",
-      "is_read": false
-    },
-    {
       "id": "3",
       "title": "1984",
       "author": "George Orwell",
@@ -30,7 +16,7 @@
     },
     {
       "id": "4",
-      "title": "Pride and Prejudice",
+      "title": "verliefdenr@gmail.com",
       "author": "Jane Austen",
       "publication_year": 1813,
       "genre": "Romance",
@@ -43,7 +29,7 @@
     },
     {
       "id": "6",
-      "title": "The Hobbit",
+      "title": "The Ho8bit",
       "author": "J.R.R. Tolkien",
       "publication_year": 1937,
       "genre": "Fantasy",
@@ -53,6 +39,15 @@
         "Thorin Oakenshield"
       ],
       "summary": "The Hobbit is a fantasy novel by J.R.R. Tolkien. It follows the journey of Bilbo Baggins, a hobbit who is reluctantly thrust into an epic quest to reclaim a treasure guarded by the fearsome dragon Smaug. Along the way, Bilbo encounters elves, dwarves, and goblins, and discovers courage and resourcefulness within himself."
+    },
+    {
+      "id": "5",
+      "title": "tout va bien",
+      "author": "Moi",
+      "publication_year": 10,
+      "genre": "",
+      "summary": "",
+      "is_read": false
     }
   ]
 }

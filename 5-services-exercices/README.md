@@ -1,0 +1,3 @@
+# Le recherche full-text en json-server
+
+FAUT ETRE EN JSON-SERVER 0.17.3 ! SINON LA RECHERCHE DE L'EXERCICE NE BANANERA PAS :c
