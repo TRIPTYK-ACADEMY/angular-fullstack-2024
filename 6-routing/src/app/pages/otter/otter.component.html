@@ -1,0 +1,9 @@
+<p>otter works!</p>
+
+<!-- pour les routes à paramètres, on rajouter un argument par paramètres dans le tableau -->
+<!-- Si on rajoute un objet, ça rajoute des queryParam mais avec un ; à la place du ?-->
+<a [routerLink]="['/otter', '🖕']">
+    Loutre avec l'id 42
+</a>
+
+<router-outlet />
