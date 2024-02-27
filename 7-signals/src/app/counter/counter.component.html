@@ -1,0 +1,25 @@
+<div>
+    <span>
+        Compteur
+    </span>
+    <span>
+        {{ signalCounterAsReadonly() }}
+    </span>
+    <button (click)="signalIncrement()">
+        +
+    </button>
+    <button (click)="setSignalAsIs()">
+        =
+    </button>
+    <button (click)="signalDecrement()">
+        -
+    </button>
+    <div>
+        <span>
+            Valeur du compteur * 10 :
+        </span>
+        <span>
+            {{tenTimesSignalCounter()}}
+        </span>
+    </div>
+</div>
