@@ -1,0 +1,20 @@
+@defer (when deffered) {
+  <app-too-long-to-load />
+} @placeholder {
+  <div>
+    Placeholder
+  </div>
+} @loading {
+  <div>
+    Loading....
+  </div>
+} @error {
+  <div>
+    Erreur :c
+  </div>
+}
+
+{{ deffered }}
+<button (click)="deffered = !deffered">
+  Display too long to load
+</button>
